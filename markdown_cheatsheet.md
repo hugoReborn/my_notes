@@ -61,7 +61,12 @@
 ```
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
+## Highlighting Sintaxis
 
+```
+python `pycharm` c# `rider` ide's
+```
+python `pycharm` c# `rider` ide's
 
 
  
