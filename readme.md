@@ -16,6 +16,7 @@ this is a code block
 ```mermaid
 flowchart LR
 one --> two
+two --> three
 three --> four
 ```  
 
