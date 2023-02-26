@@ -55,5 +55,13 @@
 [soy un link](www.google.cl)
 [soy un link con titulo](https://www.google.cl "Pagina Inicio Goole")
 
+## Imagenes
+```
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+```
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
+
+
 
  
