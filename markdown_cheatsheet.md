@@ -75,7 +75,7 @@ s = "Python syntax highlighting"
 print s
 ```
 ```
-```
+
 python `pycharm` c# `rider` ide's
 
 ```javascript
