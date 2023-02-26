@@ -13,7 +13,7 @@ gdfgdfggdfg
 this is a code block
 ```
 
-```mermain
+```mermaid
 flowchart LR
 one --> two
 three --> four
