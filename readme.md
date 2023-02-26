@@ -15,7 +15,7 @@ this is a code block
 
 ```mermain
 
-Flowchart LR
+flowchart LR
 
 one --> two
 three --> four
