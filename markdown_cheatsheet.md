@@ -107,9 +107,11 @@ But let's throw in a <b>tag</b>.
 |:--------|:------:|--------|
 |hola|hola|hola|
 |**hola**| *hola*| ~~hola~~|
+|`hola`| ***hola***|hola|
 
 
 los dos puntos centran los valores 
+podemos usar otros tipos de markdown dentro de la tabla
 
 ```
 
@@ -117,6 +119,7 @@ los dos puntos centran los valores
 |:--------|:------:|--------|
 |hola|hola|hola|
 | **hola** | *hola*| ~~hola~~|
+| `hola`| ***hola***| hola |
 
 
 
