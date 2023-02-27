@@ -122,6 +122,17 @@ podemos usar otros tipos de markdown dentro de la tabla
 | `hola`| ***hola***| hola |
 
 
+## Quotes
+
+```
+> un bloque de citas se puede realizar de esta manera
+> esto es parte se la linea de arriba 
+```
+
+> un bloque de citas se puede realizar de esta manera
+> esto es parte se la linea de arriba 
+
+
 
 
  
