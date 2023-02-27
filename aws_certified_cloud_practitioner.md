@@ -238,7 +238,7 @@ la trasferencia de datos hacia el cloud es gratuita, , hacia afuera tiene un cob
 
 ```
 Importante!!
-informacionde la infraestructura de aws , estar mas cerca de tus usuarios , disminuye la latencia (retrazo de llegado de un paquete a su destino)
+> informacionde la infraestructura de aws , estar mas cerca de tus usuarios , disminuye la latencia (retrazo de llegado de un paquete a su destino)
 ```
 
 ## Regiones en AWS
