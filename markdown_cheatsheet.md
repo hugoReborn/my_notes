@@ -66,12 +66,12 @@
 ```
 python `pycharm` c# `rider` ide's
 
-```javascript
+``` javascript
 var s = "JavaScript syntax highlighting";
 alert(s); 
 ```
 
-```python
+``` python
 s = "this is python code"
 
 print s
