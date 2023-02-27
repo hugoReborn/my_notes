@@ -66,7 +66,7 @@ switch --> pc1
 switch --> pc2
 switch --> pc3
 ```
-`infraestructura de un paquete enviado desde un pc , pasando por un router luego al switch hasta llegar a un despinatario (pc...n)`
+`infraestructura de un paquete enviado desde un pc , pasando por un router luego al switch hasta llegar a un despinatario (pc1...pcn)`
 
 ## Manera Tradicional de Constuir Infraestructuras
 ***
@@ -122,6 +122,111 @@ Los recursos estas disponibles atraves  de la red y pueden ser accedidos por div
 
 Varios clientes pueden compartir una misma infraestructura y aplicaciones con seguridad y privacidad.
 multiples clientes reciben servicios desde los mismo recursos fisicos
+
+##  `Rapida Elasticidad y Escabilidad`
+Adquirir y disponer de recursos de forma automatica y rapida cuando sea necesario.
+Escala rapida y facilmente en funcion a la demanda 
+
+## `Servicio Medido`
+el uso de los recursos se mide por lo que los usuarios pagan correctamente por lo que han utilizado 
+
+## `Cambia el Gasto de Capital (capex) por el Gasto Operativo (opex)`
+el usuario paga bajo demanda, no posee hardware propio 
+reduccion del costo total de propiedad (TCO) y los gastos operativos
+
+## `Nos Beneficiamos de Economias de Escala Masiva`
+Los precios se reducen ya wur AWS es mas eficiente debido a la gran escala 
+
+## `Dejar de Adivinar la Capacidad`
+AWS nos aprovisiona de recursos a escala basado en el uso medido y real de nuestra aplicacion 
+
+## `Aumento de la Celocidad y la Agilidad `
+Ahorro de dinero en funcionamiento y mantenimiento de centro de datos 
+
+
+# Problemas Resueltos con el uso de Cloud Computing.
+
+## `Flexibilidad`
+Cambia los tipos de recursos cuando sea necesario
+
+## `Rentabilidad`
+Pagas por lo que utilizas
+
+## `Escalabilidad`
+Permite acomodar mayores cargas, reforzando el hardware o añadiendo nodos adicionales
+
+`alta disponibilidad y tolerancia a los fallos `
+
+## `Agilidad`
+desarrollar , testear y lanzar rapidamente aplicaciones de software
+
+
+# Tipos de Cloud Computing
+## `Infraestructura Como Servicio (IaaS)`
+Proporciona bloques de construccion para la `IT` en el cloud , es decir que se proporcionan redes , ordenadores , servidores y espacion de almacenamiento, lo que nos lleva a poder construir lo que queramos gracias a estos bloques
+
+## `Plataforma Como Servicio (PaaS)`
+Elimina la necesidad de que tu organizacion gestiona la infraestructura subyacente
+Se centra en el despliegue de nuestras aplicaciones 
+
+## `Software Como Servicio (SaaS)`
+Producto completo que es ejecutado y gestionando por el proveedor de servicios
+
+
+
+|Instalaciones Fisicas|             |
+|---------------------|-------------|
+| - aplicaciones (yo) | - datos (yo) |
+|- middleware (yo) |- tiempo de ejecucion (yo) |
+|- os (yo) |- servidores (yo)|
+|- networking (yo) |- virtualizacion (yo)|
+| - almacenamiento (yo)|
+
+| Infraestructura como Servicio (IaaS) |     |
+|-------------------------------|-----|
+|- aplicaciones (yo)|- datos (yo)|
+| - tiempo de ejecucion (yo) |- middleware (yo)|
+| - os (yo)|- networking (otros) |
+|- virtualizacion (otros)|- servidores (otros)|
+|- almacenamiento (otros)
+
+|Plataforma Como Servicio (PaaS)|      |
+|------------------------|------|
+|- tiempo de ejecucion (otros)| - middleware (otros)|
+|- os (otros)|- virtualizacion (otros)|
+|- servidores (otros) |- almacenamiento (otros)|
+|- networking (otros)|- aplicaciones (yo)|
+|- datos (yo)|
+
+|Software Como Servicio (SaaS)|      |
+|------------------------|------|
+|- tiempo de ejecucion (otros)| - middleware (otros)|
+|- os (otros)|- virtualizacion (otros)|
+|- servidores (otros) |- almacenamiento (otros)|
+|- networking (otros)|- aplicaciones (otros)|
+|- datos (otros)|
+
+`Gmail es un ejemplo de software como servicio (SaaS)`
+
+## `Infraestructura Como Servicio`
+- Amazon EC2 (aws)
+
+## `Plataforma Como Servicio`
+
+- Elastic Beanstalk (aws)
+
+## `Software Como Servicio`
+- en aws existen muchos servicios como Rekognition
+
+# Precios en AWS 
+Aws tiene 3 fundamentos de precios siguiendo el modelo de pago por uso 
+
+## `Computacion`
+Se paga por el tiempo de uso de computacion , poder de computo (lambda, EC2)
+
+
+
+
 
 
 
