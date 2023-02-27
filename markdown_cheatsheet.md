@@ -116,6 +116,7 @@ los dos puntos centran los valores
 | item 1 | item 2 | item 3 |
 |--------|:------:|--------|
 |hola|hola|hola|
+|**hola**|||
 
 
 
