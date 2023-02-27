@@ -292,6 +292,32 @@ Region ---> AP-Sudeste-2
 Zonas ---> AP-Sudeste-2a
 
 ```
+- cada zona de disponibilidad es uno o varios centros con conectividad, red y alimentacion 
+- cada zona esta separada en caso de catastrofe y conectadas por medio de banda ancha
+
+```mermaid
+flowchart LR
+ap_soth-east-2a---->ap_soth-east-2b
+ap_soth-east-2b ---->ap_soth-east-2c
+ap_soth-east-2c ---->ap_soth-east-2a
+```
+`zonas conectadas entre si `
+
+# Puntos de Presencia de AWS.
+- Sirven para entregar contenido con la menor latencia posible al usuario final 
+- Acercan el contenido a los usuarios
+
+# Consola AWS 
+## Servicios Globales 
+- Identity and access management (`IAM`)
+- Route 53 (`servicio DNS`)
+- Cloud Front (`Red Entrega Contenido`)
+- WAF (`Firewall de Aplicaciones Web`)
+
+## Servicios Ambito Regional 
+- Amazon EC2 (`Infraestructura como Servicio`)
+- Elastic Beanstalk (`Plataforma Como Servicio`)
+- Lambda (`Funcion Como Servicio`)
 
 
 
