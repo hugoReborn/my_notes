@@ -318,6 +318,30 @@ ap_soth-east-2c ---->ap_soth-east-2a
 - Amazon EC2 (`Infraestructura como Servicio`)
 - Elastic Beanstalk (`Plataforma Como Servicio`)
 - Lambda (`Funcion Como Servicio`)
+- Rekognition (`Software como Servicio`)
+
+`Los servicios pueden ser vistos o divididos por las regiones que soportan o estan disponibles estos servicios`
+
+___
+
+- cada vez que creamos una instancia de algun servicio que no sea global , debemos preocuparnos de la region en que nos encontramos, si no , no seremos capaces de ver la instancia, si no nos encontramos en la region correcta 
+
+## `Servicios Regionales`
+- existe un link donde podemos seleccionar una region de aws y aqui se nos deplegaran todos los servicios para esta zona 
+
+```mermaid
+flowchart LR
+global_infraestructure ----> regional_product
+
+```
+
+# IAM.
+## `Identity and Access Management`
+
+este es un servicio global de AWS 
+
+## `Cuenta Root / Raiz`
+
 
 
 
