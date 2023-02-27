@@ -182,29 +182,29 @@ Producto completo que es ejecutado y gestionando por el proveedor de servicios
 |- networking (yo) |- virtualizacion (yo)|
 | - almacenamiento (yo)|
 
-| Infraestructura como Servicio (IaaS) |     |
-|-------------------------------|-----|
-|- aplicaciones (yo)|- datos (yo)|
-| - tiempo de ejecucion (yo) |- middleware (yo)|
-| - os (yo)|- networking (otros) |
-|- virtualizacion (otros)|- servidores (otros)|
-|- almacenamiento (otros)
+| Infraestructura como Servicio (IaaS) |                      |
+|--------------------------------------|----------------------|
+| - aplicaciones (yo)                  | - datos (yo)         |
+| - tiempo de ejecucion (yo)           | - middleware (yo)    |
+| - os (yo)                            | - networking (otros) |
+| - virtualizacion (otros)             | - servidores (otros) |
+| - almacenamiento (otros)             |                      |
 
-|Plataforma Como Servicio (PaaS)|      |
-|------------------------|------|
-|- tiempo de ejecucion (otros)| - middleware (otros)|
-|- os (otros)|- virtualizacion (otros)|
-|- servidores (otros) |- almacenamiento (otros)|
-|- networking (otros)|- aplicaciones (yo)|
-|- datos (yo)|
+| Plataforma Como Servicio (PaaS) |                          |
+|---------------------------------|--------------------------|
+| - tiempo de ejecucion (otros)   | - middleware (otros)     |
+| - os (otros)                    | - virtualizacion (otros) |
+| - servidores (otros)            | - almacenamiento (otros) |
+| - networking (otros)            | - aplicaciones (yo)      |
+| - datos (yo)                    |
 
-|Software Como Servicio (SaaS)|      |
-|------------------------|------|
-|- tiempo de ejecucion (otros)| - middleware (otros)|
-|- os (otros)|- virtualizacion (otros)|
-|- servidores (otros) |- almacenamiento (otros)|
-|- networking (otros)|- aplicaciones (otros)|
-|- datos (otros)|
+| Software Como Servicio (SaaS) |                          |
+|-------------------------------|--------------------------|
+| - tiempo de ejecucion (otros) | - middleware (otros)     |
+| - os (otros)                  | - virtualizacion (otros) |
+| - servidores (otros)          | - almacenamiento (otros) |
+| - networking (otros)          | - aplicaciones (otros)   |
+| - datos (otros)               |
 
 `Gmail es un ejemplo de software como servicio (SaaS)`
 
@@ -338,11 +338,40 @@ global_infraestructure ----> regional_product
 # IAM.
 ## `Identity and Access Management`
 
-este es un servicio global de AWS 
+Este es un servicio global de AWS 
 
 ## `Cuenta Root / Raiz`
 
+Esta es la cuenta creada por defecto, no debe ser utilizada ni compartida 
 
+## `Usuarios`
+IAM posee usuarios que son personas dentro de la organizacion, los cuales pueden ser agrupados
+
+```mermaid
+flowchart TB
+    subgraph Desarrolladores
+        d1 --> d2
+        d3 --> d4
+    end
+    subgraph Operaciones
+        op1 -->op2
+        op3 -->op4
+    end
+```
+```
+Importante!!
+los grupos solo pueden tener usuarios , no pueden contener 
+otros grupos , ni subgrupos
+
+no es obligatorio que un usuario este en un grupo 
+y un usuario puede estar en mas de un grupo 
+```
+# Permisos IAM
+- A los usuarios o grupos se les puede asignar unos 
+archivos json los cuales son llamados politicas
+
+- En Aws se aplica el principio de minimo privilegio, no dar 
+mas permisos de los que un usuario necesita
 
 
 
