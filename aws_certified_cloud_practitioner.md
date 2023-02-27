@@ -224,8 +224,74 @@ Aws tiene 3 fundamentos de precios siguiendo el modelo de pago por uso
 ## `Computacion`
 Se paga por el tiempo de uso de computacion , poder de computo (lambda, EC2)
 
+## `Almacenamiento`
+Se paga por los datos almacenados en el cloud (S3)
 
+##  `Transferencia de Datos Fuera del Cloud`
+la trasferencia de datos hacia el cloud es gratuita, , hacia afuera tiene un cobro 
 
+# Aws Como Infraestructura Global.
+- Aws Regions
+- Aws Availability Zones
+- Aws Data Centers
+- Aws Edge Locations (`puntos presencia aws`)
+
+```
+Importante!!
+informacionde la infraestructura de aws , estar mas cerca de tus usuarios , disminuye la latencia (retrazo de llegado de un paquete a su destino)
+```
+
+## Regiones en AWS
+- Aws tiene regiones en practicamente todo el mundo 
+- Los nombres tienen una nomenclatura
+
+```mermaid
+flowchart LR
+us ---->east
+east ---->numero
+us ---> usa
+punto_cardinal--->east
+n_region ---> numero
+style us fill:#0d0403
+style east fill:#0d0403
+style numero fill:#0d0403
+
+```
+- Una region es un grupo de centros de datos
+- La mayoria de los servicios de AWS son de ambito regional 
+
+## `Como Elegir una Region de AWS `
+
+### `Cumplimiento de los requisitos legales y de gobernanza de datos`
+- los datos nunca salen de una region sin un permiso explicito
+
+### `Proximidad de los Clientes `
+- para reducir la latencia
+
+### `Servicios Disponibles en su Region`
+- Generalmente los nuevos servicios o nuevas funciones no estan disponibles en todas las regiones 
+- Los precios varian de una region a otra y son transparentes en la pagina de precios por servicios 
+
+## Zonas de Disponibilidad de AWS 
+****
+Cada region tiene muchas zonas de disponibilidad, normalmente son :
+- 3 zonas (normal)
+- 2 zonas (minimo)
+- 6 zonas (maximo)
+
+## `ejemplo`
+`AP-sudeste-2a`
+
+`AP-sudeste-2b`
+
+`AP-sudeste-2c`
+
+```mermaid
+flowchart LR
+Region ---> AP-Sudeste-2
+Zonas ---> AP-Sudeste-2a
+
+```
 
 
 
