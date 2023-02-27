@@ -139,6 +139,24 @@ podemos usar otros tipos de markdown dentro de la tabla
 
 ## Separadores
 
+```
+Three or more...
+
+---
+
+Hyphens
+
+***
+
+Asterisks
+
+___
+
+Underscores
+Three or more...
+
+```
+
 Three or more...
 
 ---
