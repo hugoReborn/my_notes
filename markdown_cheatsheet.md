@@ -127,10 +127,15 @@ podemos usar otros tipos de markdown dentro de la tabla
 ```
 > un bloque de citas se puede realizar de esta manera
 > esto es parte se la linea de arriba 
+
+> esta es una cita muy larga deberia crearse un bloque con esta linea de manera ordenada como funcionan las citas en otras aplicaciones 
 ```
 
 > un bloque de citas se puede realizar de esta manera
 > esto es parte se la linea de arriba 
+
+
+> esta es una cita muy larga deberia crearse un bloque con esta linea de manera ordenada como funcionan las citas en otras aplicaciones
 
 
 
