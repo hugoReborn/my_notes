@@ -137,7 +137,22 @@ podemos usar otros tipos de markdown dentro de la tabla
 
 > esta es una cita muy larga deberia crearse un bloque con esta linea de manera ordenada como funcionan las citas en otras aplicaciones
 
+## Separadores
 
+Three or more...
+
+---
+
+Hyphens
+
+***
+
+Asterisks
+
+___
+
+Underscores
+Three or more...
 
 
  
