@@ -104,6 +104,8 @@ But let's throw in a <b>tag</b>.
 
 ```
 | item 1 | item 2 | item 3 |
+|--------|:------:|--------|
+|hola|hola|hola|
 
 ```
 
