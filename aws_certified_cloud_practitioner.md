@@ -85,5 +85,46 @@ Contras
 - contratar un equipo 24/7 para supervisar la insfraestructura
 - eventos naturales, incendios, terremotos , apagones
 
+## Que es el Cloud Computing.
+Es un suministro de bajo demanda de potencia de calculo , almacenamiento de base de datos, aplicaiones y otros recursos informaticos, esta modalidad tiene pagos y precios dependiendo de su uso.
+Cloud Computing nos permite aprovisionar excatamente el tipo y tamaño de los recursos informaticos que necesitamos. esto se refiere a que podemos seleccionar una maquina con las caracteristicas que necesitamos para nuestros requerimientos (ram, cpu) y podemos acceder a estos recursos casi de manera instantanea.
+
+Cloud Computing es una manera sensilla de acceder a servidores, almacenamientos, bases de datos y un conjunto de servicios y aplicaciones 
+
+Cloud Computing como `AWS` nos permite acceder a la cantidad de servidores que queramos sin preocuparnos por nada mas.
+
+## Modelos de Despliegue Cloud.
+***
+
+### Cloud Privado.
+- Servicios en el cloud utilizados por una sola organizacion, no expuestos al publico 
+- nos da control total 
+- gran seguridad y esta enfocado para aplicaciones sencillas
+****
+### Cloud Publico.
+- Los recursos del cloud son propiedad de un proveedor de servicios , son operados por el y sus servicios se suministran atraves del internet 
+***
+### Cloud Hibrido.
+- Servidores locales 
+- Extension de servicios atraves del cloud 
+***
+
+## Caracteristicas del Cloud Computing.
+
+## `Autoservicio Bajo Demanda (On-demand)`
+Los usuarios pueden utilizar servicios aprovisionar recursos y utilizarlos sin interaccion humana con el proveedor de servicios 
+
+## `Amplio Acceso a la Red`
+
+Los recursos estas disponibles atraves  de la red y pueden ser accedidos por diversas plataformas de clientes 
+
+## `Alquiler Multiple y Agrupacion de Recursos`
+
+Varios clientes pueden compartir una misma infraestructura y aplicaciones con seguridad y privacidad.
+multiples clientes reciben servicios desde los mismo recursos fisicos
+
+
+
+
 
 
