@@ -356,6 +356,8 @@ Departamento actua como ForeingKey en el modelo Empleado , esto nos permite rela
 ```mermaid
 flowchart LR
 A[Django] ----> C((ORM)) ----> D[(Data Base)]
+D[(Data Base)] ----> C((ORM)) ----> A[Django]
+```
 ```
 
 Django utiliza ORM para comunicar se con la base de datos (codigo python a SQL).
@@ -367,4 +369,139 @@ Tabien debemos volver a crear un super usuario para poder acceder al panel de ad
 
 ```python 
 python manage.py createsuperuser
+```
+
+# Class Meta en Models
+Class Meta nos permite definir metadatos para nuestros modelos , estos metadatos nos permiten definir el nombre de la tabla en la base de datos , el nombre de cada uno de los campos de la tabla , el orden en el que se van a mostrar los registros de la tabla , etc.
+
+```python
+class Meta:
+    verbose_name = 'Mi Empleado'
+    verbose_name_plural = 'Empleados de la empresa'
+    ordering = ['id']
+    unique_together = ('first_name', 'last_name')
+```
+`unique together` nos permite definir que dos campos no pueden tener el mismo valor , en este caso no puede haber dos empleados con el mismo nombre y apellido.
+
+# Administrador de Django.
+
+## Personalizando Modelos en el Panel de Django.
+Podemos personalizar como se vera nuestro modelo en el panel de administracion por medio de la creacion de una clase en el archivo `admin.py` de cada aplicacion.
+
+```python
+class EmpleadoAdmin(admin.ModelAdmin):
+    list_display = ('id', 'first_name', 'last_name', 'job', 'full_name')
+    search_fields = ('first_name', 'last_name')
+    list_filter = ('job', 'department', 'hire_date')
+```
+
+Luego tal como registramos el modelo en una primera instancia , ahora registramos el modelo y esta clase que hemos creado.
+
+
+```python
+admin.site.register(Empleado, EmpleadoAdmin)
+```
+Esta Modificacion nos mostrara el modelo creado en backend , en una tabla tal como si nos encontraramos en una base de datos.
+
+- search_fields nos permite buscar registros por medio de los campos que le especifiquemos , en este caso podemos buscar registros por medio del nombre y apellido del empleado.
+
+- list_filter nos permite filtrar los registros por medio de los campos que le especifiquemos , en este caso podemos filtrar los registros por medio del puesto , departamento y fecha de contratacion.
+
+- Estos campos son tuplas, en el caso de solo querer un solo campo podemos escribir lo siguiente 
+
+```python
+search_fields = ('first_name',)
+```
+
+## Agregar Campos al Panel de Administracion de Django.
+
+```python
+class EmpleadoAdmin(admin.ModelAdmin):
+    list_display = ('id', 'first_name', 'last_name', 'job', 'full_name')
+    search_fields = ('first_name', 'last_name')
+    list_filter = ('job', 'department', 'hire_date')
+    list_editable = ('job',)
+
+    def full_name(self, obj):
+        return obj.first_name + ' ' + obj.last_name
+```
+
+La funcion full name que concatena dos propiedades del modelo , nos permite agregar un campo al panel de administracion de Django , en este caso el campo full_name.
+
+
+# Vistas Genericas en Django.
+
+## ListView.
+ListView nos permite listar los registros de un modelo en una vista , para esto debemos importar la clase ListView de django.views.generic.list y luego debemos crear una clase que herede de esta clase.
+
+```python
+from django.views.generic.list import ListView
+
+class EmpleadoListView(ListView):
+    model = Empleado
+    template_name = 'persona/list_all.html'
+    context_object_name = 'empleados'
+```
+
+context_object_name nos permite especificar el nombre de la variable que vamos a utilizar en el template para iterar sobre los registros de la base de datos.
+
+Usando esta vista solucionaremos los siguientes requerimientos:
+- listar todos los empleados de la empresa.
+- listar todos los empleados que pertenecen a un departamento en especifico.
+- listar todos los empleados que pertenecen a un area en especifico.
+- listar a los empleados por una palabra clave 
+- listar habilidades de un empleado 
+
+Con la clase ListView debemos usar el metodo `queryset` para filtrar los registros de la base de datos , este metodo nos permite filtrar los registros de la base de datos por medio de una consulta SQL.
+
+Resumiento este metodo nos permite indicar que datos dentro del modelo queremos mostrar en la vista.
+
+```python
+queryset = Empleado.objects.filter(
+    job='0',
+    department__name='IT'
+)
+```
+
+lo que estamos haciendo en esta queryset es filtrar todos los empleados que cumplan con ambas condiciones que su job sea igual a 0 y que pertenezca al departamento IT 
+Podemos  usar como filtro `department__ name = 'IT'` porque department es una ForeingKey y podemos acceder a sus propiedades.
+
+```mermaid
+flowchart LR
+department ---> guion_bajo1--->guion_bajo_2 --->name
+nombre_del_modelo ---> guion1--->guion2 --->nombre_campo
+```
+```
+!!! Esta es la manera clasica de realizar filtros , pero no es la mas eficiente
+```
+### `funcion get_queryset`
+Este metodo siempre debe retornar una lista de elementos 
+```python
+def get_queryset(self):
+    lista = empleado.objects.filter(
+        department__name='IT'
+    )
+```
+
+## `Filtros Con Parametros URL`
+
+- preparamos la url 
+```python
+path('lista_empleados_area/<name>', views.ListaEmpleadosByArea.as_view(), name='empleados_area'),
+```
+
+< name > =  este parametro indica que partes de la url se va a pasar como parametro a la vista. por medio de una variable 
+
+- preparamos la vista 
+```python
+class ListaEmpleadosByArea(ListView):
+    template_name = 'persona/list_by_area.html'
+    context_object_name = 'empleados'
+
+    def get_queryset(self):
+        area = self.kwargs['name']
+        lista = Empleado.objects.filter(
+            department__name=area
+        )
+        return lista
 ```
