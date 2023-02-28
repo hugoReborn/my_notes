@@ -352,3 +352,19 @@ class Empleado(models.Model):
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
 ```
 Departamento actua como ForeingKey en el modelo Empleado , esto nos permite relacionar un empleado con un departamento.
+
+```mermaid
+flowchart LR
+A[Django] ----> C((ORM)) ----> D[(Data Base)]
+```
+
+Django utiliza ORM para comunicar se con la base de datos (codigo python a SQL).
+Debemos indicarle a la ORM el gestor de base de datos que estamos usando en el proyecto , para esto debemos ir al archivo settings.py del proyecto y modificar el apartado de `DATABASES` , en este apartado debemos especificar el gestor de base de datos que estamos usando , el nombre de la base de datos , el usuario y la contraseña de la base de datos.
+
+Cada vez que realizamos una modificacion o nos conectamos a una nueva base de datos debemos ejecutar el comando `python manage.py makemigrations` para que django cree un archivo de migracion y luego ejecutamos el comando `python manage.py migrate` para que django ejecute las migraciones y cree las tablas en la base de datos.
+
+Tabien debemos volver a crear un super usuario para poder acceder al panel de administracion de Django.
+
+```python 
+python manage.py createsuperuser
+```
