@@ -68,5 +68,16 @@ A[proyecto django] -----> F[aplicacion2]
 
 ```
 Cada Aplicacion debe dedicarse a una logica de negocio especifica y esta puede y debe ser reutilizada
+Cada Aplicacion debe ser lo mas independiente posible de las demas aplicaciones
 ```
 
+# Proyecto Empleados
+| empleados                     | listar | departamentos | administrar |
+|-------------------------------|--------|---------------|-------------|
+| Imagen                        |
+ | Sistema Registro de Empleados |
+
+## Listar
+Listar será una pestaña donde podremos listar los trabajadores ingresados en la base de datos 
+
+## Departamentos
