@@ -276,3 +276,79 @@ admin.site.register(VoltageBatt24)
 ```
 Se debe realizar este proceso con cada uno de los modelos que hemos creado en la aplicaciones , si tenemos mas de una aplicacion debemos realizar el mismo proceso.
 ___
+
+# Super User Django
+
+```python 
+python manage.py createsuperuser
+```
+el script nos pedira que ingresemos un nombre de usuario , un correo electronico y una contraseña , luego de esto ya podremos acceder al panel de administracion de Django.
+
+Luego que hemos creado un super usuario podemos acceder al panel de administracion de Django, esto nos mostrara los modelos que hemos creado hasta el momento y nos permitira agregar , editar y eliminar registros de cada uno de estos modelos.
+
+# Modelos en Django 
+
+```python
+class Empleado(models.Model):
+    nombre = models.CharField('Nombre', max_length=50)
+    apellido = models.CharField('Apellido'max_length=50)
+    
+    class Meta:
+        verbose_name = 'Mi Empleado'
+        verbose_name_plural = 'Empleados de la empresa'
+        ordering = ['id']
+
+    def __str__(self):
+        return str(self.id) + ' - ' + self.nombre + ' ' + self.apellido
+
+```
+
+`def __str__(self):` es un metodo que nos permite retornar un valor en especifico cuando se imprima el objeto en consola.
+
+# Tipos de Campos en Django
+
+AL igual que en SQL , Django en sus modelos tiene tipos de campos que nos permiten definir el tipo de dato que va a almacenar cada uno de los campos de la tabla.
+
+## Tipos de Campos Comunes en Django
+
+### `Charfield`
+
+Se Utiliza para almacenar cadenas de texto , posee los siguientes parametros:
+- max_length : Especifica el numero maximo de caracteres que puede almacenar el campo.
+- blank : Especifica si el campo puede estar vacio o no.
+- choices : Especifica una lista de tuplas que nos permiten definir una lista de opciones que puede tomar el campo.
+
+Ejemplo:
+
+```python
+gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
+```
+
+### `BooleanField`
+Se utiliza para especificar si un campo es verdadero o falso , posee los siguientes parametros:
+- default : Especifica el valor por defecto que va a tomar el campo.
+
+## `DateField`
+Se utiliza para almacenar fechas , posee los siguientes parametros:
+- auto_now : Especifica si el campo va a tomar la fecha actual cada vez que se guarde un registro.
+- null especifica si el campo puede ser nulo o no.
+
+## `DateTimeField`
+Se utiliza para almacenar fechas y horas
+
+# Relaciones Entre Modelos.
+
+```python 
+class Empleado(models.Model):
+    job_choices = (
+        ('0', 'Contador'),
+        ('1', 'Administrador'),
+        ('2', 'Economista'),
+        ('3', 'Otro'),
+    )
+    first_name = models.CharField('Nombre', max_length=50)
+    last_name = models.CharField('Apellido', max_length=50)
+    job = models.CharField('Puesto', max_length=1, choices=job_choices)
+    department = models.ForeignKey(Department, on_delete=models.CASCADE)
+```
+Departamento actua como ForeingKey en el modelo Empleado , esto nos permite relacionar un empleado con un departamento.
