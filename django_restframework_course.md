@@ -32,7 +32,41 @@ entorno_virtual --> elegir_nombre
 Con el script anterior ya tendriamos una carpeta creada en nuestro directorio nuestro entorno virtual
 ```
 Para poder hacer uso de este entorno virtual que hemos creado debemos activarlo, en la terminal nos movemos hasta el directorio llamado 
-`Script` y cuando nos encontremos dentro de este directorio ejecutamos el siguiente comando 
+`Scripts` y cuando nos encontremos dentro de este directorio ejecutamos el siguiente comando 
 ``./activate``
 
+Esto nos devolverá en consola lo siguiente 
+
+```
+(nombre_entorno) C:\Users\Usuario\Documents\Proyectos\django_restframework_course\Scripts>
+```
+
+# Creacion de un proyecto Django en terminal
+Antes de crear nuestro proyecto debemos fijarnos en el directorio en que nos encontremos,
+ya que al crear el proyecto quedara dentro del directorio en que nos encontremos
+creamos un proyecto con el siguiente comando 
+```
+django-admin startproject nombre_proyecto
+```
+
+Este comando nos creará una nueva carpeta en nuestro directorio donde vivira el proyecto django y sus
+archivos principales
+- manage.py
+- init.py 
+- settings.py
+- urls.py
+## Composicion de un Proyecto Django 
+___
+````mermaid
+graph LR
+A[proyecto django] -----> B[bases de datos]
+A[proyecto django] -----> C[vistas]
+A[proyecto django] -----> D[urls]
+A[proyecto django] -----> E[aplicacion1]
+A[proyecto django] -----> F[aplicacion2]
+````
+
+```
+Cada Aplicacion debe dedicarse a una logica de negocio especifica y esta puede y debe ser reutilizada
+```
 
