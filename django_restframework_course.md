@@ -28,6 +28,11 @@ entorno_virtual --> elegir_nombre
 
 ````
 
-
+```
+Con el script anterior ya tendriamos una carpeta creada en nuestro directorio nuestro entorno virtual
+```
+Para poder hacer uso de este entorno virtual que hemos creado debemos activarlo, en la terminal nos movemos hasta el directorio llamado 
+`Script` y cuando nos encontremos dentro de este directorio ejecutamos el siguiente comando 
+``./activate``
 
 
